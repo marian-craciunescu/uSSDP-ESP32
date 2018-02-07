@@ -22,20 +22,26 @@
 #define URI_SIZE        2
 #define BUFFER_SIZE     48
 
-class uSSDP{
+class uSSDP {
 
-  typedef enum {NONE, SEARCH, NOTIFY} method_t;
+    typedef enum {
+        NONE, SEARCH, NOTIFY
+    } method_t;
 
-  public:
+public:
     uSSDP();
+
     ~uSSDP();
 
     void begin(uDevice *device);
+
     uint8_t process();
+
     void send(method_t method);
+
     void schema(WiFiClient client);
 
-  private:
+private:
     WiFiUDP _server;
 
     uDevice *_device;
