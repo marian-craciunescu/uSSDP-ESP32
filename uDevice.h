@@ -39,7 +39,7 @@ public:
         begin(base, mac, BASIC);
     }
 
-    char *uuid();
+    String uuid();
 
     device_t deviceType();
 

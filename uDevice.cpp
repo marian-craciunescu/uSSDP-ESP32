@@ -50,10 +50,10 @@ uDevice::~uDevice() {
     free(_manufacturerURL);
 }
 
-char *uDevice::uuid() {
-    char *_uuid = (char *) malloc(37);
+String uDevice::uuid() {
+    char _uuid[37];
     sprintf(_uuid, "%s-%02X%02X%02X%02X%02X%02X", _base, _mac[0], _mac[1], _mac[2], _mac[3], _mac[4], _mac[5]);
-    return _uuid;
+    return String(_uuid);
 }
 
 
